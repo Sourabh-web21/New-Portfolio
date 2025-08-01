@@ -8,7 +8,7 @@ import ThemeToggle from "../ui/ThemeToggle";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { isDark, toggleTheme } = useTheme();
+  const { isDark } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,6 +21,7 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" }
   ];

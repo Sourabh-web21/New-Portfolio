@@ -8,6 +8,130 @@ import Card from "../ui/Card";
 const Projects = () => {
   const { isDark } = useTheme();
   const [filter, setFilter] = useState("all");
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
+  // Experience data
+  const experiences = [
+ {
+  title: "Computer Vision Intern",
+  company: "TTL Engineering Pvt. Ltd.",
+  duration: "Jun 2025 - Jul 2025",
+  location: "Gurgaon, India",
+  type: "internship",
+  description: "Worked on vehicle and number plate detection using YOLO and contributed to the internal testing of AI-based web applications.",
+  achievements: [
+    "Created annotated datasets for vehicle classification and number plate detection",
+    "Trained YOLO models for object detection on video feeds",
+    "Tested internal web and AI tools, identifying bugs and improving system reliability",
+    "Conducted competitor analysis to benchmark accuracy and performance"
+  ],
+  technologies: ["YOLO", "Computer Vision", "Python", "AI Testing", "Dataset Annotation", "OpenCV", "PyTorch"],
+  // github: "https://github.com/yourusername/yolo-vehicle-detection",
+  // demo: "https://vehicle-detection-demo.netlify.app",
+  image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop&crop=center",
+  detailedDescription: "During my internship at TTL Engineering, I worked extensively on computer vision projects focused on real-time vehicle detection and number plate recognition systems. My work involved YOLO-based model development, custom dataset creation, internal testing, and benchmarking through competitor analysis. This experience gave me practical insights into AI model training, performance tuning, and system-level QA testing.",
+  responsibilities: [
+    "Developed and maintained annotated datasets for vehicle classification with over 10,000 labeled images",
+    "Implemented YOLO v5 and v8 models for real-time object detection on live video feeds",
+    "Conducted comprehensive testing of internal AI tools and web applications",
+    "Collaborated with senior engineers to optimize model performance and accuracy",
+    "Documented testing procedures and created bug reports for development team",
+    "Performed competitor analysis to evaluate detection system performance against industry benchmarks"
+  ],
+  learnings: [
+    "Advanced understanding of YOLO architecture and computer vision algorithms",
+    "Experience with dataset annotation tools like LabelImg and Roboflow",
+    "Proficiency in OpenCV and PyTorch for computer vision tasks",
+    "Knowledge of AI model deployment and optimization techniques",
+    "Understanding of software testing methodologies for AI applications"
+  ],
+  gallery: [
+    "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=400&fit=crop&crop=center",
+    "/images/sample.png",
+    "/images/graphs.png"
+  ]
+}
+,
+   {
+  title: "Smart India Hackathon – Dialogic Chatbot",
+  company: "VIT Chennai",
+  duration: "Mar 2024",
+  location: "Chennai, India",
+  type: "hackathon",
+  description: "Designed and developed 'Dialogic' — an AI-powered Socratic chatbot built to foster critical thinking and self-reflection among students through guided questioning.",
+  achievements: [
+    "🏅 Selected among Top 50 teams in internal Smart India Hackathon (SIH) screening at VIT",
+    "Built a full-stack chatbot system using modern AI and web technologies",
+    "Enabled contextual learning using dynamic questioning and user-specific dialogue flow"
+  ],
+  technologies: ["React", "Node.js", "OpenAI API", "Framer Motion", "Tailwind CSS", "JavaScript"],
+  github: "https://github.com/WebDevHarsha/Dialogic-AI.git",
+  demo: "https://dialogic-ai-sih.vercel.app/dialogic",
+  image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop&crop=center",
+  detailedDescription: "As part of the internal round of Smart India Hackathon (SIH) 2024 at VIT Chennai, our team developed 'Dialogic', a Socratic AI chatbot aimed at revolutionizing education through inquiry-based learning. The chatbot guides students through a conversational journey, asking thought-provoking questions and encouraging deeper understanding rather than providing direct answers. The project emphasized ethical AI usage, personalized learning, and intuitive UI/UX design.",
+  responsibilities: [
+    "Designed the chatbot interface and implemented frontend in React with Tailwind CSS and Framer Motion",
+    "Integrated OpenAI API to power the Socratic questioning and contextual conversations",
+    "Collaborated on dialogue design logic for educational flow and retention",
+    "Participated in live internal pitching and demo rounds at VIT Chennai",
+    "Ensured mobile-responsive design and smooth UX for student accessibility"
+  ],
+  learnings: [
+    "Understanding of Socratic learning methodology and how to model it in AI systems",
+    "Experience with prompt engineering for dynamic and educational dialogues",
+    "Hands-on integration of OpenAI API with frontend and backend logic",
+    "Improved skills in team collaboration, pitch presentation, and full-stack development",
+    "Knowledge of deploying full-stack applications with responsive UI"
+  ],
+  gallery: [
+    "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop&crop=center",
+    "/images/Screenshot 2025-08-01 224220.png"
+
+   
+  ],
+  teamImages: [
+        "/images/WhatsApp Image 2025-08-01 at 20.48.09_339b1ca9.jpg"
+    // "/images/team/sih-team-photo.jpg", // Add your actual team photos here
+    // "/images/team/sih-presentation.jpg",
+    // "/images/team/sih-working.jpg"
+  ]
+}
+// ,
+//     {
+//       title: "CodeFest 2024",
+//       company: "National Level Hackathon",
+//       duration: "Jan 2024",
+//       location: "Bangalore, India",
+//       type: "hackathon",
+//       description: "Created a sustainable e-waste management platform connecting consumers with certified recycling centers.",
+//       achievements: [
+//         "🥈 2nd Place Winner",
+//         "Developed full-stack web application",
+//         "Integrated payment gateway and geolocation services"
+//       ],
+//       technologies: ["React", "Node.js", "MongoDB", "Express", "Payment APIs"],
+//       github: "https://github.com/yourusername/e-waste-management-platform",
+//       demo: "https://e-waste-platform.netlify.app",
+//       image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=400&h=250&fit=crop&crop=center"
+//     },
+//     {
+//       title: "Python Developer Intern",
+//       company: "DataTech Analytics",
+//       duration: "Dec 2023 - Feb 2024",
+//       location: "Remote",
+//       type: "internship",
+//       description: "Worked on data analysis projects and automated reporting systems using Python and various data science libraries.",
+//       achievements: [
+//         "Automated 5 manual reporting processes",
+//         "Reduced data processing time by 60%",
+//         "Created interactive dashboards for data visualization"
+//       ],
+//       technologies: ["Python", "Pandas", "NumPy", "Matplotlib", "SQL", "Power BI"],
+//       github: "https://github.com/yourusername/data-analysis-automation",
+//       demo: "https://data-dashboard-demo.netlify.app",
+//       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&crop=center"
+//     }
+  ];
   const [selectedProject, setSelectedProject] = useState(null);
 
   const categories = ["all", "web", "python", "ai/ml"];
@@ -84,11 +208,396 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="projects" className={`py-20 transition-all duration-500 ${
-      isDark
-        ? 'bg-gradient-to-b from-slate-800/50 to-slate-900/50'
-        : 'bg-gradient-to-b from-gray-50 to-white'
-    }`}>
+    <>
+      {/* Experience Section */}
+      <section id="experience" className={`py-20 transition-all duration-500 ${
+        isDark
+          ? 'bg-gradient-to-b from-slate-800/50 to-slate-900/50'
+          : 'bg-gradient-to-b from-white to-gray-50'
+      }`}>
+        <div className="container mx-auto px-6">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <span className={`transition-all duration-500 ${
+                isDark
+                  ? 'bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent'
+                  : 'bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent'
+              }`}>
+                Experience
+              </span>
+            </h2>
+            <p className={`text-xl max-w-3xl mx-auto transition-colors duration-500 ${
+              isDark ? 'text-gray-300' : 'text-gray-700'
+            }`}>
+              My journey through internships and hackathons, building real-world solutions and gaining valuable experience
+            </p>
+          </div>
+
+          {/* Experience Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className={`rounded-2xl transition-all duration-300 hover:scale-105 overflow-hidden cursor-pointer ${
+                  isDark
+                    ? 'bg-slate-800/80 border border-slate-700 hover:border-slate-600'
+                    : 'bg-white/90 border border-gray-200 shadow-lg hover:shadow-xl'
+                }`}
+                onClick={() => setSelectedExperience(exp)}
+              >
+                {/* Image */}
+                {exp.image && (
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={exp.image}
+                      alt={exp.title}
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 ${
+                      isDark ? 'bg-gradient-to-t from-slate-800/80 to-transparent' : 'bg-gradient-to-t from-white/80 to-transparent'
+                    }`}></div>
+                  </div>
+                )}
+
+                {/* Content */}
+                <div className="p-6">
+                  {/* Header */}
+                  <div className="mb-4">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className={`text-xl font-bold ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>
+                      {exp.title} {exp.type === 'hackathon' && exp.achievements[0].includes('🏆') ? '🏆' : ''}
+                      {exp.type === 'hackathon' && exp.achievements[0].includes('🥈') ? '🥈' : ''}
+                    </h3>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
+                      exp.type === 'hackathon'
+                        ? (isDark ? 'bg-yellow-500/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700')
+                        : (isDark ? 'bg-green-500/20 text-green-400' : 'bg-green-100 text-green-700')
+                    }`}>
+                      {exp.type === 'hackathon' ? 'Hackathon' : 'Internship'}
+                    </span>
+                  </div>
+                  <p className={`font-semibold ${
+                    isDark ? 'text-blue-400' : 'text-blue-600'
+                  }`}>{exp.company}</p>
+                  <p className={`text-sm ${
+                    isDark ? 'text-gray-400' : 'text-gray-600'
+                  }`}>{exp.duration} • {exp.location}</p>
+                </div>
+
+                {/* Description */}
+                <p className={`mb-4 ${
+                  isDark ? 'text-gray-300' : 'text-gray-700'
+                }`}>{exp.description}</p>
+
+                {/* Achievements */}
+                <div className="mb-4">
+                  <h4 className={`font-semibold mb-2 ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>Key Achievements:</h4>
+                  <ul className="space-y-1">
+                    {exp.achievements.map((achievement, i) => (
+                      <li key={i} className={`text-sm flex items-start space-x-2 ${
+                        isDark ? 'text-gray-300' : 'text-gray-700'
+                      }`}>
+                        <span className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
+                          isDark ? 'bg-blue-400' : 'bg-blue-600'
+                        }`}></span>
+                        <span>{achievement}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {exp.technologies.map((tech, i) => (
+                    <span
+                      key={i}
+                      className={`px-2 py-1 rounded text-xs font-medium ${
+                        exp.type === 'hackathon'
+                          ? (isDark ? 'bg-yellow-500/20 text-yellow-300' : 'bg-yellow-100 text-yellow-700')
+                          : (isDark ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700')
+                      }`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                {(exp.github || exp.demo) && (
+                  <div className="flex gap-3 pt-2">
+                    {exp.github && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        className="flex-1"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(exp.github, '_blank');
+                        }}
+                      >
+                        <Github className="w-4 h-4 mr-2" />
+                        Code
+                      </Button>
+                    )}
+                    {exp.demo && (
+                      <Button
+                        variant="primary"
+                        size="sm"
+                        className="flex-1"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(exp.demo, '_blank');
+                        }}
+                      >
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Demo
+                      </Button>
+                    )}
+                  </div>
+                )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Experience Detail Modal */}
+      <AnimatePresence>
+        {selectedExperience && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedExperience(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className={`max-w-4xl w-full max-h-[90vh] overflow-y-auto rounded-2xl ${
+                isDark ? 'bg-slate-800 border border-slate-700' : 'bg-white border border-gray-200'
+              }`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Modal Header */}
+              <div className="relative">
+                {selectedExperience.gallery && selectedExperience.gallery[0] && (
+                  <div className="h-64 overflow-hidden rounded-t-2xl">
+                    <img
+                      src={selectedExperience.gallery[0]}
+                      alt={selectedExperience.title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className={`absolute inset-0 ${
+                      isDark ? 'bg-gradient-to-t from-slate-800/90 to-transparent' : 'bg-gradient-to-t from-white/90 to-transparent'
+                    }`}></div>
+                  </div>
+                )}
+
+                {/* Close Button */}
+                <button
+                  onClick={() => setSelectedExperience(null)}
+                  className={`absolute top-4 right-4 p-2 rounded-full ${
+                    isDark ? 'bg-slate-700/80 text-white hover:bg-slate-600' : 'bg-white/80 text-gray-900 hover:bg-white'
+                  } transition-colors duration-200`}
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* Modal Content */}
+              <div className="p-8">
+                {/* Title Section */}
+                <div className="mb-6">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h2 className={`text-3xl font-bold mb-2 ${
+                        isDark ? 'text-white' : 'text-gray-900'
+                      }`}>
+                        {selectedExperience.title}
+                        {selectedExperience.type === 'hackathon' && selectedExperience.achievements[0].includes('🏆') ? ' 🏆' : ''}
+                        {selectedExperience.type === 'hackathon' && selectedExperience.achievements[0].includes('🥈') ? ' 🥈' : ''}
+                      </h2>
+                      <p className={`text-xl font-semibold ${
+                        isDark ? 'text-blue-400' : 'text-blue-600'
+                      }`}>{selectedExperience.company}</p>
+                      <p className={`${
+                        isDark ? 'text-gray-400' : 'text-gray-600'
+                      }`}>{selectedExperience.duration} • {selectedExperience.location}</p>
+                    </div>
+                    <span className={`px-4 py-2 rounded-full text-sm font-medium ${
+                      selectedExperience.type === 'hackathon'
+                        ? (isDark ? 'bg-yellow-500/20 text-yellow-400' : 'bg-yellow-100 text-yellow-700')
+                        : (isDark ? 'bg-green-500/20 text-green-400' : 'bg-green-100 text-green-700')
+                    }`}>
+                      {selectedExperience.type === 'hackathon' ? 'Hackathon' : 'Internship'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Detailed Description */}
+                <div className="mb-8">
+                  <h3 className={`text-xl font-semibold mb-4 ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>Overview</h3>
+                  <p className={`text-lg leading-relaxed ${
+                    isDark ? 'text-gray-300' : 'text-gray-700'
+                  }`}>{selectedExperience.detailedDescription}</p>
+                </div>
+
+                {/* Responsibilities */}
+                {selectedExperience.responsibilities && (
+                  <div className="mb-8">
+                    <h3 className={`text-xl font-semibold mb-4 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>Key Responsibilities</h3>
+                    <ul className="space-y-3">
+                      {selectedExperience.responsibilities.map((responsibility, i) => (
+                        <li key={i} className={`flex items-start space-x-3 ${
+                          isDark ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          <span className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
+                            isDark ? 'bg-blue-400' : 'bg-blue-600'
+                          }`}></span>
+                          <span>{responsibility}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Key Learnings */}
+                {selectedExperience.learnings && (
+                  <div className="mb-8">
+                    <h3 className={`text-xl font-semibold mb-4 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>Key Learnings</h3>
+                    <ul className="space-y-3">
+                      {selectedExperience.learnings.map((learning, i) => (
+                        <li key={i} className={`flex items-start space-x-3 ${
+                          isDark ? 'text-gray-300' : 'text-gray-700'
+                        }`}>
+                          <span className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${
+                            isDark ? 'bg-green-400' : 'bg-green-600'
+                          }`}></span>
+                          <span>{learning}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {/* Technologies */}
+                <div className="mb-8">
+                  <h3 className={`text-xl font-semibold mb-4 ${
+                    isDark ? 'text-white' : 'text-gray-900'
+                  }`}>Technologies Used</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {selectedExperience.technologies.map((tech, i) => (
+                      <span
+                        key={i}
+                        className={`px-4 py-2 rounded-lg text-sm font-medium ${
+                          selectedExperience.type === 'hackathon'
+                            ? (isDark ? 'bg-yellow-500/20 text-yellow-300' : 'bg-yellow-100 text-yellow-700')
+                            : (isDark ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-100 text-blue-700')
+                        }`}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Team Images (for hackathons) */}
+                {selectedExperience.type === 'hackathon' && selectedExperience.teamImages && (
+                  <div className="mb-8">
+                    <h3 className={`text-xl font-semibold mb-4 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>Team Photos</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedExperience.teamImages.map((image, i) => (
+                        <div key={i} className="rounded-lg overflow-hidden">
+                          <img
+                            src={image}
+                            alt={`${selectedExperience.title} - Team Photo ${i + 1}`}
+                            className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                            onError={(e) => {
+                              e.target.src = "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&h=400&fit=crop&crop=center";
+                            }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <p className={`text-sm mt-2 ${
+                      isDark ? 'text-gray-400' : 'text-gray-600'
+                    }`}>
+                      Upload your team photos to /public/images/team/ folder and update the paths above
+                    </p>
+                  </div>
+                )}
+
+                {/* Project Gallery */}
+                {selectedExperience.gallery && selectedExperience.gallery.length > 1 && (
+                  <div className="mb-8">
+                    <h3 className={`text-xl font-semibold mb-4 ${
+                      isDark ? 'text-white' : 'text-gray-900'
+                    }`}>Project Gallery</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {selectedExperience.gallery.slice(1).filter(image => !image.includes('/images/team/')).map((image, i) => (
+                        <div key={i} className="rounded-lg overflow-hidden">
+                          <img
+                            src={image}
+                            alt={`${selectedExperience.title} - Image ${i + 2}`}
+                            className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Action Buttons */}
+                <div className="flex gap-4">
+                  {selectedExperience.github && (
+                    <Button
+                      variant="outline"
+                      className="flex-1"
+                      onClick={() => window.open(selectedExperience.github, '_blank')}
+                    >
+                      <Github className="w-5 h-5 mr-2" />
+                      View Code
+                    </Button>
+                  )}
+                  {selectedExperience.demo && (
+                    <Button
+                      variant="primary"
+                      className="flex-1"
+                      onClick={() => window.open(selectedExperience.demo, '_blank')}
+                    >
+                      <ExternalLink className="w-5 h-5 mr-2" />
+                      Live Demo
+                    </Button>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Projects Section */}
+      <section id="projects" className={`py-20 transition-all duration-500 ${
+        isDark
+          ? 'bg-gradient-to-b from-slate-800/50 to-slate-900/50'
+          : 'bg-gradient-to-b from-gray-50 to-white'
+      }`}>
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -304,6 +813,7 @@ const Projects = () => {
         </AnimatePresence>
       </div>
     </section>
+    </>
   );
 };
 

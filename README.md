@@ -20,7 +20,7 @@ A modern, responsive portfolio website built with React and Vite, showcasing my 
 - **Animations**: Framer Motion
 - **Icons**: Lucide React
 - **Form Handling**: React Hook Form with Zod validation
-- **Routing**: React Router DOM
+- **Database**: Supabase for contact form submissions
 
 ## 📁 Project Structure
 
@@ -36,12 +36,19 @@ src/
 │   │   ├── Projects.jsx
 │   │   └── Contact.jsx
 │   └── ui/
+│       ├── AnimatedSocialButton.jsx
 │       ├── Button.jsx
 │       ├── Card.jsx
+│       ├── GlowButton.jsx
 │       ├── ModernCard.jsx
-│       └── SkillBar.jsx
+│       ├── SkillBar.jsx
+│       ├── ThemeToggle.jsx
+│       └── TypewriterEffect.jsx
 ├── contexts/
 │   └── ThemeContext.jsx
+├── lib/
+│   ├── supabase.js
+│   └── utils.js
 ├── App.jsx
 ├── main.jsx
 └── index.css

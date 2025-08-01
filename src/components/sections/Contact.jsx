@@ -1,10 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { CheckCircle, Mail, MapPin, Phone, Send } from "lucide-react";
+import { AlertCircle, CheckCircle, Mail, MapPin, Phone, Send } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useTheme } from "../../contexts/ThemeContext";
+import { supabase } from "../../lib/supabase";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
 
@@ -18,7 +19,8 @@ const contactSchema = z.object({
 const Contact = () => {
   const { isDark } = useTheme();
   const [isSubmitted, setIsSubmitted] = useState(false);
-  
+  const [submitError, setSubmitError] = useState(null);
+
   const {
     register,
     handleSubmit,
@@ -50,14 +52,34 @@ const Contact = () => {
   ];
 
   const onSubmit = async (data) => {
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log("Form submitted:", data);
-    setIsSubmitted(true);
-    reset();
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => setIsSubmitted(false), 5000);
+    try {
+      setSubmitError(null);
+
+      // Save to Supabase
+      const { error } = await supabase
+        .from('contacts')
+        .insert([
+          {
+            name: data.name,
+            email: data.email,
+            subject: data.subject,
+            message: data.message,
+            created_at: new Date().toISOString()
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      setIsSubmitted(true);
+      reset();
+
+      // Reset success message after 5 seconds
+      setTimeout(() => setIsSubmitted(false), 5000);
+    } catch (error) {
+      setSubmitError(`Failed to send message: ${error.message}. Please try again or contact me directly.`);
+    }
   };
 
   return (
@@ -183,7 +205,18 @@ const Contact = () => {
                   }`}>Thank you for reaching out. I'll get back to you soon.</p>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <>
+                  {submitError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center"
+                    >
+                      <AlertCircle className="w-5 h-5 text-red-500 mr-3 flex-shrink-0" />
+                      <p className="text-red-700 text-sm">{submitError}</p>
+                    </motion.div>
+                  )}
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label className={`block text-sm font-medium mb-2 ${
@@ -205,7 +238,7 @@ const Contact = () => {
                         <p className="mt-1 text-sm text-red-400">{errors.name.message}</p>
                       )}
                     </div>
-                    
+
                     <div>
                       <label className={`block text-sm font-medium mb-2 ${
                         isDark ? 'text-gray-300' : 'text-gray-700'
@@ -288,6 +321,7 @@ const Contact = () => {
                     {isSubmitting ? "Sending..." : "Send Message"}
                   </Button>
                 </form>
+                </>
               )}
             </Card>
           </motion.div>

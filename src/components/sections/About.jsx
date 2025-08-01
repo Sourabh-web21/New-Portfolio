@@ -13,15 +13,49 @@ const About = () => {
     { name: "Web Development", icon: Users, level: 88, color: "from-green-500 to-emerald-500" }
   ];
 
-  const timeline = [
-    { year: "2024", title: "Open to Internships", company: "Seeking Opportunities", description: "Looking for frontend development and AI/ML internships to apply my skills" },
-    { year: "2023", title: "Advanced Projects", company: "Personal Development", description: "Built multiple React applications and OpenCV projects for portfolio" },
-    { year: "2022", title: "B.Tech Computer Science", company: "VIT Chennai", description: "Currently pursuing Bachelor's degree with focus on AI/ML and web development" },
-    { year: "2021", title: "Programming Journey", company: "Self-Learning", description: "Started learning Python, React, and computer vision technologies" }
-  ];
+  const timeline =
+    [
+  {
+    year: "2025",
+    title: "DSA Mastery & Internship Prep",
+    company: "Focused Learning",
+    description: "Currently mastering Data Structures and Algorithms using C++ while preparing for tech internships."
+  },
+  {
+    year: "2025",
+    title: "Computer Vision Intern",
+    company: "TTL Engineering Pvt. Ltd.",
+    description: "Worked on vehicle and number plate detection using YOLO, dataset creation, and AI tool testing."
+  },
+  {
+    year: "2024",
+    title: "Smart India Hackathon – Top 50",
+    company: "VIT Chennai",
+    description: "Built 'Dialogic', a Socratic AI chatbot, and got selected among the top 50 teams in the internal SIH screening."
+  },
+  {
+    year: "2024",
+    title: "Web & AI Projects",
+    company: "Personal Development",
+    description: "Created full-stack and AI-based apps including a face-organizing tool and number plate extractor."
+  },
+  {
+    year: "2023",
+    title: "Technical Foundations",
+    company: "VIT Chennai",
+    description: "Explored Python, C/C++, Java, and web development. Participated in hackathons and tech workshops."
+  },
+  {
+    year: "2021",
+    title: "Programming Kickstart",
+    company: "Self-Learning",
+    description: "Began learning programming through Python, basic web technologies, and computer vision basics."
+  }
+]
+
 
   const stats = [
-    { number: "5+", label: "Projects Built", icon: Award },
+    { number: "15+", label: "Projects Built", icon: Award },
     { number: "2+", label: "Years Learning", icon: Code },
     { number: "∞", label: "Lines of Code & Cofee", icon: Coffee }
   ];
