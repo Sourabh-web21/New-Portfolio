@@ -26,8 +26,8 @@ const Projects = () => {
     "Conducted competitor analysis to benchmark accuracy and performance"
   ],
   technologies: ["YOLO", "Computer Vision", "Python", "AI Testing", "Dataset Annotation", "OpenCV", "PyTorch"],
-  // github: "https://github.com/yourusername/yolo-vehicle-detection",
-  // demo: "https://vehicle-detection-demo.netlify.app",
+    // github: "https://github.com/yourusername/yolo-vehicle-detection",
+    // demo: "https://vehicle-detection-demo.netlify.app",
   image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop&crop=center",
   detailedDescription: "During my internship at TTL Engineering, I worked extensively on computer vision projects focused on real-time vehicle detection and number plate recognition systems. My work involved YOLO-based model development, custom dataset creation, internal testing, and benchmarking through competitor analysis. This experience gave me practical insights into AI model training, performance tuning, and system-level QA testing.",
   responsibilities: [
@@ -188,6 +188,32 @@ const Projects = () => {
   live: "https://dialogic-ai-sih.vercel.app/dialogic",
   featured: false
 }
+,{
+  id: 4,
+  title: "Mood Tracker – Personalized Music Recommendation App",
+  description: "An app that suggests Spotify tracks based on your current mood",
+  longDescription: "Mood Tracker is a full-stack application built with React, Vite, Node.js, and MongoDB. Users can log in, select their current mood, and receive a curated list of Spotify tracks to match their mood. The app securely stores user data, tracks mood history, and integrates with the Spotify API to provide personalized recommendations. Designed to work seamlessly both locally and when deployed on Vercel/Render.",
+  image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&h=400&fit=crop",
+  category: "web",
+  technologies: ["React", "Vite", "Node.js", "Express", "MongoDB", "Spotify API", "Axios"],
+  github: "https://github.com/Sourabh-web21/Mood-tracker",
+  live: "https://mood-tracker-git-main-sourabhs-projects-f5702034.vercel.app",
+  featured: true
+},
+{
+  id: 6,
+  title: "Netflix Clone – Frontend Movie Streaming UI",
+  description: "A responsive Netflix-style frontend UI fetching movies from TMDB API",
+  longDescription: "This Netflix Clone is a React and Tailwind CSS powered frontend application that mimics the Netflix interface. It fetches movie and TV show data dynamically from the TMDB API, displays trending, popular, and genre-specific content, and allows users to browse, search, and filter titles. Designed with responsive layouts and modern UI components, it provides a realistic streaming platform experience without backend integration.",
+  image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV0ZmxpeHxlbnwwfHwwfHx8MA%3D%3D",
+  category: "web",
+  technologies: ["React", "Tailwind CSS", "Axios", "TMDB API", "Vite"],
+  github: "https://github.com/Sourabh-web21/netflix-frontend",
+  live: "https://netflix-frontend-swart.vercel.app", // Replace with actual deployed link
+  featured: false
+}
+
+
 // ,
 //     {
 //       id: 5,
