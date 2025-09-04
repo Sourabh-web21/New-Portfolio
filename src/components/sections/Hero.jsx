@@ -133,7 +133,7 @@ const Hero = () => {
             <span>View My Work</span>
             <ChevronDown className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
           </GlowButton>
-          <a href="https://drive.google.com/file/d/103NIGXB1koXSgj70B4SlHxP0Jj_NWVYN/view?usp=drive_link" download>
+          <a href="https://drive.google.com/file/d/1vAblyBJ4H0coguBMz4YHEHlPD65RJcsr/view?usp=sharing" download>
             <Button
               variant="secondary"
               size="lg"
