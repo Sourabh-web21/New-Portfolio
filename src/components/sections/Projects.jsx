@@ -217,7 +217,7 @@ const Projects = () => {
   title: "Patient Deterioration Predictor – ML Health Dashboard",
   description: "A Flask-based AI/ML app predicting patient deterioration in the next 90 days for hospitals and health centers",
   longDescription: "This Patient Deterioration Predictor is a Flask-powered AI/ML application built for hospitals and health centers to track chronic disease patients. It uses three trained XGBoost models to predict the likelihood of patient deterioration over the next 90 days. Each patient's dataset is created from their last 30–90 days of medical records, allowing staff to monitor risk trends and make informed healthcare decisions. The app combines a user-friendly interface with robust ML predictions to streamline patient care monitoring.",
-  image: "https://images.unsplash.com/photo-1588776814546-60d1d0f8e60c?w=600&auto=format&fit=crop&q=60",
+  image: "https://images.unsplash.com/photo-1587557983735-f05198060b52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhlYWx0aCUyMGNhcmUlMjB3b3JrZXJ8ZW58MHx8MHx8fDA%3D",
   category: "ai/ml",
   technologies: ["Python", "Flask", "XGBoost", "Pandas", "Scikit-learn"],
   github: "https://github.com/Sourabh-web21/chronic-disease-predictor.gitl",
