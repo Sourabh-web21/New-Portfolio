@@ -209,24 +209,27 @@ const Projects = () => {
   category: "web",
   technologies: ["React", "Tailwind CSS", "Axios", "TMDB API", "Vite"],
   github: "https://github.com/Sourabh-web21/netflix-frontend",
-  live: "https://netflix-frontend-swart.vercel.app", // Replace with actual deployed link
+  live: "https://netflix-frontend-swart.vercel.app", 
   featured: false
+},
+{
+  id: 7,
+  title: "Patient Deterioration Predictor – ML Health Dashboard",
+  description: "A Flask-based AI/ML app predicting patient deterioration in the next 90 days for hospitals and health centers",
+  longDescription: "This Patient Deterioration Predictor is a Flask-powered AI/ML application built for hospitals and health centers to track chronic disease patients. It uses three trained XGBoost models to predict the likelihood of patient deterioration over the next 90 days. Each patient's dataset is created from their last 30–90 days of medical records, allowing staff to monitor risk trends and make informed healthcare decisions. The app combines a user-friendly interface with robust ML predictions to streamline patient care monitoring.",
+  image: "https://images.unsplash.com/photo-1588776814546-60d1d0f8e60c?w=600&auto=format&fit=crop&q=60",
+  category: "ai/ml",
+  technologies: ["Python", "Flask", "XGBoost", "Pandas", "Scikit-learn"],
+  github: "https://github.com/Sourabh-web21/chronic-disease-predictor.gitl",
+  live: "https://drive.google.com/file/d/13ZJrfviJIvLL80-68WNZ3JlDpxUsPrfi/view?usp=sharing",
+  featured: true
 }
 
 
-// ,
-//     {
-//       id: 5,
-//       title: "Calculator App",
-//       description: "Scientific calculator with advanced mathematical functions",
-//       longDescription: "A scientific calculator application built with JavaScript featuring basic arithmetic operations, trigonometric functions, logarithms, and memory functions. Clean UI with keyboard support.",
-//       image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
-//       category: "python",
-//       technologies: ["JavaScript", "HTML5", "CSS3", "Math.js"],
-//       github: "https://github.com/sourabhagarwal",
-//       live: "https://github.com/sourabhagarwal",
-//       featured: false
-//     }
+
+
+
+
   ];
 
   const filteredProjects = filter === "all" 
