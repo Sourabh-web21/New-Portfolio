@@ -182,10 +182,22 @@ const Projects = () => {
       image: "https://images.unsplash.com/photo-1587557983735-f05198060b52?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGhlYWx0aCUyMGNhcmUlMjB3b3JrZXJ8ZW58MHx8MHx8fDA%3D",
       category: "ai/ml",
       technologies: ["Python", "Flask", "XGBoost", "Pandas", "Scikit-learn"],
-      github: "https://github.com/Sourabh-web21/chronic-disease-predictor.gitl",
+      github: "https://github.com/Sourabh-web21/chronic-disease-predictor",
       live: "https://drive.google.com/file/d/13ZJrfviJIvLL80-68WNZ3JlDpxUsPrfi/view?usp=sharing",
       featured: true
-    }
+    },
+    {
+  id: 8,
+  title: "License Plate Detection System",
+  description: "AI-powered vehicle and license plate recognition system",
+  longDescription: "An intelligent license plate detection system built with Python, YOLOv8, and EasyOCR. The system detects multiple vehicles in images, localizes license plates with high accuracy, and extracts plate numbers using advanced OCR techniques. Features include multi-scale image preprocessing, CLAHE enhancement, confidence scoring, and CSV export of results. Deployed as a web application using Gradio for easy accessibility.",
+  image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=400&fit=crop",
+  category: "ai/ml",
+  technologies: ["Python", "YOLOv8", "EasyOCR", "OpenCV", "Gradio", "PyTorch"],
+  github: "https://github.com/Sourabh-web21/Number-Plate-Reading-Machine",
+  // live: "https://your-app-name.onrender.com",
+  featured: true
+}
   ];
 
   // Filter projects based on selected category
