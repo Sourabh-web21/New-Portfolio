@@ -195,9 +195,22 @@ const Projects = () => {
   category: "ai/ml",
   technologies: ["Python", "YOLOv8", "EasyOCR", "OpenCV", "Gradio", "PyTorch"],
   github: "https://github.com/Sourabh-web21/Number-Plate-Reading-Machine",
+  // lhttps://images.unsplash.com/photo-1581092795365-1b32c993c4e1?w=600&h=400&fit=cropive: "https://your-app-name.onrender.com",
+  featured: true
+},
+{
+  id: 9,
+  title: "Sensitive Data Redaction & Analysis System",
+  description: "AI-powered document and image redaction with OCR and Gemini analysis",
+  longDescription: "An advanced Python system for detecting, redacting, and analyzing sensitive data across documents and images. Supports PDFs, DOCX, Excel, PPTX, and image formats. Integrates spaCy NER, regex patterns, Tesseract OCR, MTCNN face detection, and AI analysis via Google Gemini. Features secure image handling, face blurring, pattern-based text redaction, CSV/HTML reporting, and a user-friendly Gradio web interface.",
+  image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop",
+  category: "ai/ml",
+  technologies: ["Python", "spaCy", "Tesseract OCR", "MTCNN", "OpenCV", "Gradio", "PyMuPDF", "python-docx", "openpyxl", "python-pptx", "Google Gemini"],
+  github: "https://github.com/Sourabh-web21/optiv.git",
   // live: "https://your-app-name.onrender.com",
   featured: true
 }
+
   ];
 
   // Filter projects based on selected category
